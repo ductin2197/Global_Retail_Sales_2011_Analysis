@@ -1,7 +1,7 @@
 # Global Retail Sales Analysis 2011
 ![SQL](https://img.shields.io/badge/SQL-00758F?style=for-the-badge&logo=postgresql&logoColor=white) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 ## Interactive Dashboard
-[**Bấm vào đây để xem interactive dashboard**](https://public.tableau.com/app/profile/t.n.tr.n8477/viz/Retail_Sales_17762621520820/GLOBALRETAILSALESPERFORMANCEDASHBOARD2011_?publish=yes)
+[**Bấm vào đây để xem interactive dashboard(CHUYỂN HƯỚNG SANG TABLEAU)**](https://public.tableau.com/app/profile/t.n.tr.n8477/viz/Retail_Sales_17762621520820/GLOBALRETAILSALESPERFORMANCEDASHBOARD2011_?publish=yes)
 
 ## Project Overview
 Dự án truy vấn và phân tích hơn 500,000 giao dịch bán lẻ để tìm ra pattern doanh thu, từ đó tìm ra pros & cons, insights & actions.
