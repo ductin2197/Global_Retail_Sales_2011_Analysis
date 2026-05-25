@@ -1,7 +1,7 @@
 # Global Retail Sales Analysis 2011
 ![SQL](https://img.shields.io/badge/SQL-00758F?style=for-the-badge&logo=postgresql&logoColor=white) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 ## Interactive Dashboard
-[**Bấm vào đây để xem interactive dashboard (CHUYỂN SANG TABLEAU)**](https://public.tableau.com/app/profile/t.n.tr.n8477/viz/Retail_Sales_17762621520820/GLOBALRETAILSALESPERFORMANCEDASHBOARD2011_?publish=yes)
+[**Xem Interactive Dashboard trên Tableau Public**](https://public.tableau.com/app/profile/t.n.tr.n8477/viz/Retail_Sales_17762621520820/GLOBALRETAILSALESPERFORMANCEDASHBOARD2011_?publish=yes)
 
 ## Project Overview
 Dự án truy vấn và phân tích hơn 500,000 giao dịch bán lẻ để tìm ra pattern doanh thu, từ đó tìm ra pros & cons, insights & actions.
@@ -11,7 +11,17 @@ Dự án truy vấn và phân tích hơn 500,000 giao dịch bán lẻ để tì
 ## SQL 
 Quá trình truy vấn và làm sạch dữ liệu được thực hiện bằng SQL.
  [**Xem chi tiết các câu lệnh SQL tại đây**](./data_cleaning_steps.sql)
-
+## SQL Highlights
+```sql
+-- Phân tích doanh thu theo thị trường (Window Function)
+SELECT 
+    country,
+    SUM(revenue) as total_revenue,
+    ROUND(SUM(revenue) * 100.0 / SUM(SUM(revenue)) OVER(), 2) as revenue_pct
+FROM transactions
+GROUP BY country
+ORDER BY total_revenue DESC;
+```
 ## Preview Dashboard
 ![Dashboard Preview](DEMO.gif)
 
