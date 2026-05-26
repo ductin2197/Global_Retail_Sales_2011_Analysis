@@ -13,14 +13,15 @@ Quá trình truy vấn và làm sạch dữ liệu được thực hiện bằng
  [**Xem chi tiết các câu lệnh SQL tại đây**](./data_cleaning_steps.sql)
 ## SQL Highlights
 ```sql
--- Phân tích doanh thu theo thị trường (Window Function)
-SELECT 
-    country,
-    SUM(revenue) as total_revenue,
-    ROUND(SUM(revenue) * 100.0 / SUM(SUM(revenue)) OVER(), 2) as revenue_pct
-FROM transactions
-GROUP BY country
-ORDER BY total_revenue DESC;
+/* - Tổng doanh thu từng nước.
+- Bỏ UK để so sánh các thị trường khác. Do UK là thị trường áp đảo nên exclude ra.
+- Lấy Top 5 nước cao nhất */
+SELECT Country, SUM(Revenue) AS Total_Revenue_By_Country
+FROM cleaned_data
+WHERE Country <> 'United Kingdom'
+GROUP BY Country
+ORDER BY Total_Revenue_By_Country DESC
+LIMIT 5;
 ```
 ## Preview Dashboard
 ![Dashboard Preview](DEMO.gif)
