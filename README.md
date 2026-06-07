@@ -2,8 +2,6 @@
 ![SQL](https://img.shields.io/badge/SQL-00758F?style=for-the-badge&logo=postgresql&logoColor=white) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 ## Preview Dashboard
 ![Dashboard Preview](DEMO.gif)
-## Interactive Dashboard
-[**Xem Interactive Dashboard trên Tableau Public**](https://public.tableau.com/app/profile/t.n.tr.n8477/viz/Retail_Sales_17762621520820/GLOBALRETAILSALESPERFORMANCEDASHBOARD2011_?publish=yes)
 
 ## Project Overview
 Dự án truy vấn và phân tích hơn 500,000 giao dịch bán lẻ để tìm ra pattern doanh thu, từ đó tìm ra pros & cons, insights & actions.
@@ -45,8 +43,8 @@ SELECT
     ) AS Revenue_Rank
 FROM country_revenue;
 ```
-## Preview Dashboard
-![Dashboard Preview](DEMO.gif)
+## Interactive Dashboard
+[**Xem Interactive Dashboard trên Tableau Public**](https://public.tableau.com/app/profile/t.n.tr.n8477/viz/Retail_Sales_17762621520820/GLOBALRETAILSALESPERFORMANCEDASHBOARD2011_?publish=yes)
 
 ## Key Business Insights
 Dựa trên kết quả phân tích, rút ra được các insights sau:
