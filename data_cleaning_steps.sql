@@ -13,7 +13,7 @@ Tại sao: Để xác định xem đây có phải là doanh nghiệp tập trun
 SELECT 
     CASE WHEN Country = 'United Kingdom' THEN 'UK' ELSE 'International' END AS Market_Type,
     ROUND(SUM(Revenue), 2) AS Total_Revenue,
-    COUNT(InvoiceNo) AS Order_Count
+    COUNT(DISTINCT InvoiceNo) AS Order_Count
 FROM cleaned_data 
 GROUP BY Market_Type;
 
@@ -27,9 +27,28 @@ GROUP BY Country
 ORDER BY Total_Revenue_By_Country DESC
 LIMIT 5;
 
+/* - Xếp hạng các quốc gia theo tổng doanh thu.
+   - Sử dụng Window Function để tạo bảng xếp hạng.
+   - Xác định các thị trường đóng góp doanh thu cao nhất. */
+
+WITH country_revenue AS (
+    SELECT
+        Country,
+        SUM(Revenue) AS Revenue
+    FROM cleaned_data
+    GROUP BY Country
+)
+
+SELECT
+    Country,
+    Revenue,
+    RANK() OVER(
+        ORDER BY Revenue DESC
+    ) AS Revenue_Rank
+FROM country_revenue;
 
 /* - Tổng tiền theo tên hàng.
-- Tìm 5 mặt hàng bán chạy nhất. */
+- Top 5 products by revenue. */
 SELECT Description, SUM(Revenue) AS Total_Revenue_By_Product
 FROM cleaned_data
 GROUP BY Description
@@ -39,9 +58,29 @@ LIMIT 5;
 
 /* - Tách tháng từ cột ngày.
 - Xem biến động dòng tiền theo thời gian. */
-SELECT STRFTIME('%Y-%m', InvoiceDate) AS Month, SUM(Revenue) AS Monthly_Revenue
+SELECT STRFTIME('%Y-%m', InvoiceDate) AS Month, 
+       SUM(Revenue) AS Monthly_Revenue
 FROM cleaned_data
-GROUP BY Month;
+GROUP BY Month
+ORDER BY Month;
+
+/* - Tính giá trị trung bình của mỗi đơn hàng (Average Order Value).
+   - Gom doanh thu theo từng Invoice trước khi tính trung bình.
+   - Đánh giá quy mô chi tiêu điển hình của khách hàng. */
+
+WITH order_revenue AS (
+    SELECT
+        InvoiceNo,
+        SUM(Revenue) AS Order_Value
+    FROM cleaned_data
+    GROUP BY InvoiceNo
+)
+
+SELECT
+    ROUND(AVG(Order_Value), 2) AS Average_Order_Value
+FROM order_revenue;
+
+
 
 
 
