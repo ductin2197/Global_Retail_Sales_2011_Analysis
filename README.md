@@ -44,8 +44,6 @@ SELECT
     ) AS Revenue_Rank
 FROM country_revenue;
 ```
-## Interactive Dashboard
-[**Xem Interactive Dashboard trên Tableau Public**](https://public.tableau.com/app/profile/t.n.tr.n8477/viz/Retail_Sales_17762621520820/GLOBALRETAILSALESPERFORMANCEDASHBOARD2011_?publish=yes)
 
 ## Key Business Insights
 Dựa trên kết quả phân tích, rút ra được các insights sau:
