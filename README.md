@@ -13,21 +13,35 @@ Quá trình truy vấn và làm sạch dữ liệu được thực hiện bằng
  [**Xem chi tiết các câu lệnh SQL tại đây**](./data_cleaning_steps.sql)
 ## SQL Highlights
 ```sql
-/* - Tính giá trị trung bình của mỗi đơn hàng (Average Order Value).
-   - Gom doanh thu theo từng Invoice trước khi tính trung bình.
-   - Đánh giá quy mô chi tiêu điển hình của khách hàng. */
+/* - Tổng doanh thu từng nước.
+- Bỏ UK để so sánh các thị trường khác. Do UK là thị trường áp đảo nên exclude ra.
+- Lấy Top 5 nước cao nhất */
+SELECT Country, SUM(Revenue) AS Total_Revenue_By_Country
+FROM cleaned_data
+WHERE Country <> 'United Kingdom'
+GROUP BY Country
+ORDER BY Total_Revenue_By_Country DESC
+LIMIT 5;
 
-WITH order_revenue AS (
+/* - Xếp hạng các quốc gia theo tổng doanh thu.
+   - Sử dụng Window Function để tạo bảng xếp hạng.
+   - Xác định các thị trường đóng góp doanh thu cao nhất. */
+
+WITH country_revenue AS (
     SELECT
-        InvoiceNo,
-        SUM(Revenue) AS Order_Value
+        Country,
+        SUM(Revenue) AS Revenue
     FROM cleaned_data
-    GROUP BY InvoiceNo
+    GROUP BY Country
 )
 
 SELECT
-    ROUND(AVG(Order_Value), 2) AS Average_Order_Value
-FROM order_revenue;
+    Country,
+    Revenue,
+    RANK() OVER(
+        ORDER BY Revenue DESC
+    ) AS Revenue_Rank
+FROM country_revenue;
 ```
 ## Preview Dashboard
 ![Dashboard Preview](DEMO.gif)
