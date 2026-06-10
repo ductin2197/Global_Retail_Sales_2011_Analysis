@@ -45,8 +45,9 @@ FROM country_revenue;
 ```
 
 ## Architecture Diagram
-```mermaid
 
+```mermaid
+flowchart TD
     subgraph Data_Source [Data Source]
         A[Raw Sales Data]
     end
@@ -77,6 +78,7 @@ FROM country_revenue;
     style D fill:#E8F5E9,stroke:#43A047,stroke-width:2px
     style E fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px
     style F fill:#FCE4EC,stroke:#D81B60,stroke-width:2px
+
 ```
 ## Key Business Insights
 Dựa trên kết quả phân tích, rút ra được các insights sau:
