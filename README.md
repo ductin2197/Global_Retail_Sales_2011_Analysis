@@ -72,12 +72,12 @@ flowchart LR
     D --> E
     E --> F
 
-    style A fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px
-    style B fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px
-    style C fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px
-    style D fill:#E8F5E9,stroke:#43A047,stroke-width:2px
-    style E fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px
-    style F fill:#FCE4EC,stroke:#D81B60,stroke-width:2px
+    style A fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1
+    style B fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px,color:#E65100
+    style C fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px,color:#E65100
+    style D fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20
+    style E fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px,color:#4A148C
+    style F fill:#FCE4EC,stroke:#D81B60,stroke-width:2px,color:#880E4F
 
 ```
 ## Key Business Insights
