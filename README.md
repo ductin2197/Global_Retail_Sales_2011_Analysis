@@ -45,12 +45,42 @@ FROM country_revenue;
 ```
 
 ## Architecture diagram
+```markdown
+```mermaid
 flowchart TD
-    A[Raw Sales Data] --> B[SQL Transformation]
-    B --> C[Aggregations & Segmentation]
-    C --> D[Tableau Dashboard]
-    D --> E[Business Insights]
-    E --> F[Strategic Recommendations]
+
+    subgraph Data_Source [Data Source]
+        A[Raw Sales Data]
+    end
+
+    subgraph Data_Processing [SQL Analytics Layer]
+        B[SQL Transformation]
+        C[Aggregations & Segmentation]
+    end
+
+    subgraph Visualization [Visualization Layer]
+        D[Tableau Dashboard]
+    end
+
+    subgraph Decision [Decision Support]
+        E[Business Insights]
+        F[Strategic Recommendations]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+
+    %% Styling
+    style A fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px
+    style B fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px
+    style C fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px
+    style D fill:#E8F5E9,stroke:#43A047,stroke-width:2px
+    style E fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px
+    style F fill:#FCE4EC,stroke:#D81B60,stroke-width:2px
+```
 
 ## Key Business Insights
 Dựa trên kết quả phân tích, rút ra được các insights sau:
