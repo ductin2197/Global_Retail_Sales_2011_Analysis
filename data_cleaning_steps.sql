@@ -19,13 +19,13 @@ GROUP BY Market_Type;
 
 /* - Tổng doanh thu từng nước.
 - Bỏ UK để so sánh các thị trường khác. Do UK là thị trường áp đảo nên exclude ra.
-- Lấy Top 5 nước cao nhất */
+- Lấy Top 10 nước cao nhất */
 SELECT Country, SUM(Revenue) AS Total_Revenue_By_Country
 FROM cleaned_data
 WHERE Country <> 'United Kingdom'
 GROUP BY Country
 ORDER BY Total_Revenue_By_Country DESC
-LIMIT 5;
+LIMIT 10;
 
 /* - Xếp hạng các quốc gia theo tổng doanh thu.
    - Sử dụng Window Function để tạo bảng xếp hạng.
