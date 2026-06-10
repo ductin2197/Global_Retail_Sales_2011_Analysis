@@ -47,7 +47,7 @@ FROM country_revenue;
 ## Architecture Diagram
 
 ```mermaid
-flowchart TD
+flowchart LR
     subgraph Data_Source [Data Source]
         A[Raw Sales Data]
     end
