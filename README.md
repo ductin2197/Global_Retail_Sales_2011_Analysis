@@ -44,6 +44,14 @@ SELECT
 FROM country_revenue;
 ```
 
+## Architecture diagram
+flowchart TD
+    A[Raw Sales Data] --> B[SQL Transformation]
+    B --> C[Aggregations & Segmentation]
+    C --> D[Tableau Dashboard]
+    D --> E[Business Insights]
+    E --> F[Strategic Recommendations]
+
 ## Key Business Insights
 Dựa trên kết quả phân tích, rút ra được các insights sau:
 
