@@ -97,5 +97,4 @@ Dựa trên kết quả phân tích, rút ra được các insights sau:
 > ### 📌 Ghi chú về xử lý dữ liệu & trực quan hóa
 > 
 > SQL được sử dụng cho việc làm sạch và tổng hợp dữ liệu cốt lõi.  
-> Một số chỉ số và phân tích chi tiết *(khung giờ giao dịch, tỷ trọng doanh thu, Top-N sản phẩm)*  
-> được thực hiện trong Tableau dựa trên tập dữ liệu đã được xử lý.
+> Một số chỉ số và phân tích chi tiết *(khung giờ giao dịch, tỷ trọng doanh thu, Top-N sản phẩm)* được thực hiện trong Tableau dựa trên tập dữ liệu đã được xử lý.
