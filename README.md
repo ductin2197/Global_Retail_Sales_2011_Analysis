@@ -52,12 +52,12 @@ flowchart TD
         A[Raw Sales Data]
     end
 
-    subgraph Data_Processing [SQL Analytics Layer]
+    subgraph Data_Processing [SQL Processing]
         B[SQL Transformation]
         C[Aggregations & Segmentation]
     end
 
-    subgraph Visualization [Visualization Layer]
+    subgraph Visualization [Visualization]
         D[Tableau Dashboard]
     end
 
