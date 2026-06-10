@@ -44,7 +44,7 @@ SELECT
 FROM country_revenue;
 ```
 
-## Architecture Diagram
+## Analysis Procedure
 
 ```mermaid
 flowchart LR
