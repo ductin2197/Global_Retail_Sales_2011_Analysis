@@ -94,6 +94,8 @@ Dựa trên kết quả phân tích, rút ra được các insights sau:
 * **Quản trị nguồn lực:** Tăng cường lượng hàng tồn kho và nhân sự hỗ trợ trong **Quý 4** để khai thác tối đa sức mua cuối năm.
 * **Tối ưu quảng cáo:** Tập trung chạy các chiến dịch khuyến mãi và Flash Sale vào **Khung giờ vàng** để tối ưu hóa conversion rates.
 
----
-### Ghi chú về xử lý dữ liệu & trực quan hóa
-SQL được sử dụng cho việc làm sạch và tổng hợp dữ liệu cốt lõi. Một số chỉ số và phân tích chi tiết (khung giờ giao dịch, tỷ trọng doanh thu, Top-N sản phẩm) được thực hiện trong Tableau dựa trên tập dữ liệu đã được xử lý.
+## Appendix: Data Processing & Visualization Notes
+
+SQL được sử dụng cho việc làm sạch và tổng hợp dữ liệu cốt lõi.  
+Một số chỉ số và phân tích chi tiết (khung giờ giao dịch, tỷ trọng doanh thu, Top-N sản phẩm)  
+được thực hiện trong Tableau dựa trên tập dữ liệu đã được xử lý.
